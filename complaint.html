@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Complaint Form</title>
+
+    <style>
+        body {
+            background-color: #000; /* Black background color */
+            color: #fff; /* White text color */
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #8a2be2; /* Violet border color */
+            border-radius: 10px;
+            background-color: #333; /* Dark gray container background color */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #8a2be2; /* Violet border color */
+            border-radius: 5px;
+            background-color: #444; /* Dark gray input background color */
+            color: #fff; /* White text color */
+        }
+
+        button[type="submit"] {
+            background-color: #8a2be2; /* Violet background color */
+            color: #fff; /* White text color */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #6a1a9c; /* Darker violet on hover */
+        }
+
+        .completed {
+            background-color: #4CAF50; /* Green background color for completed message */
+            color: #fff; /* White text color */
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Waste Complaint Form</h1>
+        <form id="complaintForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="houseNumber">House Number:</label>
+            <input type="text" id="houseNumber" name="houseNumber" required>
+
+            <label for="complainant">Who is trying to deposit waste in your location:</label>
+            <input type="text" id="complainant" name="complainant" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Completed complaint message -->
+        <div class="completed">
+            Completed complaint submitted!
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code to handle form submission
+        const complaintForm = document.getElementById("complaintForm");
+        const completedMessage = document.querySelector(".completed");
+
+        complaintForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            completedMessage.style.display = "block";
+        });
+    </script>
+</body>
+</html>
